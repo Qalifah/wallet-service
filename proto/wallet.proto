@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./proto";
+
+import "google/protobuf/timestamp.proto";
+
+service Wallet {
+  rpc GetBalance(GetBalanceRequest) returns (BalanceResponse) {}
+  rpc UpdateBalance(UpdateBalanceRequest) returns (BalanceResponse) {}
+}
+
+message BalanceResponse {
+  uint64 amount = 1;
+  uint32 user_id = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message GetBalanceRequest {
+  uint32 user_id = 1;
+}
+
+message UpdateBalanceRequest {
+  uint32 user_id = 1;
+  uint64 new_balance = 2;
+}

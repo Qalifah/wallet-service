@@ -1,0 +1,8 @@
+postgres:
+  database: "grey"
+  password: "qaliforshort"
+  username: "qali"
+  host: "localhost"
+  port: "5432"
+
+serve_addr: "127.0.0.1:50051"
